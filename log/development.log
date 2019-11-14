@@ -1,0 +1,510 @@
+  [1m[35m (289.7ms)[0m  [1m[35mCREATE DATABASE "produto_development" ENCODING = 'unicode'[0m
+  [1m[35m (300.1ms)[0m  [1m[35mCREATE DATABASE "produto_test" ENCODING = 'unicode'[0m
+Started GET "/" for 172.17.0.1 at 2019-11-14 17:23:59 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.8ms | Allocations: 468)
+Completed 200 OK in 66ms (Views: 38.0ms | ActiveRecord: 0.0ms | Allocations: 2765)
+
+
+Started GET "/" for 172.17.0.1 at 2019-11-14 17:27:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (27.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2076798528192202080)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191114172750)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" character varying, "category" character varying, "value" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191114172750"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-14 17:28:53.798962"], ["updated_at", "2019-11-14 17:28:53.798962"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2076798528192202080)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.17.0.1 at 2019-11-14 17:29:15 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 24.5ms | Allocations: 185)
+Completed 200 OK in 163ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 2318)
+
+
+Started GET "/" for 172.17.0.1 at 2019-11-14 17:30:10 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant ProdutoController):
+  
+activesupport (6.0.1) lib/active_support/inflector/methods.rb:282:in `const_get'
+activesupport (6.0.1) lib/active_support/inflector/methods.rb:282:in `block in constantize'
+activesupport (6.0.1) lib/active_support/inflector/methods.rb:280:in `each'
+activesupport (6.0.1) lib/active_support/inflector/methods.rb:280:in `inject'
+activesupport (6.0.1) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (6.0.1) lib/active_support/dependencies/zeitwerk_integration.rb:19:in `constantize'
+actionpack (6.0.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:45:in `controller'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2019-11-14 17:31:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 1569)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /produto/public/packs
+[Webpacker] Hash: 53154d7baad00c6a1252
+Version: webpack 4.41.2
+Time: 8072ms
+Built at: 11/14/2019 5:31:37 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-0b67a3cc2fcde6055024.js    124 KiB  application  [emitted] [immutable]  application
+js/application-0b67a3cc2fcde6055024.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-0b67a3cc2fcde6055024.js js/application-0b67a3cc2fcde6055024.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 16574ms (Views: 16503.8ms | ActiveRecord: 3.7ms | Allocations: 22244)
+
+
+Started GET "/products/new" for 172.17.0.1 at 2019-11-14 17:31:42 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 90.5ms | Allocations: 5327)
+  Rendered products/new.html.erb within layouts/application (Duration: 102.4ms | Allocations: 5682)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 207ms (Views: 180.6ms | ActiveRecord: 4.2ms | Allocations: 13896)
+
+
+Started POST "/products" for 172.17.0.1 at 2019-11-14 17:31:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"qMZGKQcg5WwoK4o8/3PbnsdBi1kQIepvcywK3kfqIyGrEPD4XZakMDUEr9GWVLs/THiIHjqUVF0j1/b6x5SCrw==", "product"=>{"name"=>"tomate", "description"=>"legume", "category"=>"alimento", "value"=>"2.3"}, "commit"=>"Create Product"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[36mProduct Create (2.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "tomate"], ["description", "legume"], ["category", "alimento"], ["value", 2.3], ["created_at", "2019-11-14 17:31:58.643510"], ["updated_at", "2019-11-14 17:31:58.643510"]]
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 32ms (ActiveRecord: 3.9ms | Allocations: 3033)
+
+
+Started GET "/products/1" for 172.17.0.1 at 2019-11-14 17:31:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 155.7ms | ActiveRecord: 1.4ms | Allocations: 5357)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:02 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 804)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 84.9ms | ActiveRecord: 0.4ms | Allocations: 4680)
+
+
+Started GET "/products/new" for 172.17.0.1 at 2019-11-14 17:32:03 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.2ms | Allocations: 1104)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 90.4ms | ActiveRecord: 0.0ms | Allocations: 5086)
+
+
+Started POST "/products" for 172.17.0.1 at 2019-11-14 17:32:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"Xhn2X2Vt+iycbF3LX8GPaFaaSGO06dnFjBZ2Hzms439dz0COP9u7cIFDeCY25u/J3aNLJJ5cZ/fc7Yo7udJC8Q==", "product"=>{"name"=>"banana", "description"=>"fruta", "category"=>"alimento", "value"=>"1.5"}, "commit"=>"Create Product"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "banana"], ["description", "fruta"], ["category", "alimento"], ["value", 1.5], ["created_at", "2019-11-14 17:32:17.169017"], ["updated_at", "2019-11-14 17:32:17.169017"]]
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 25ms (ActiveRecord: 4.5ms | Allocations: 2772)
+
+
+Started GET "/products/2" for 172.17.0.1 at 2019-11-14 17:32:17 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 96.9ms | ActiveRecord: 1.2ms | Allocations: 4558)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:18 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.3ms | Allocations: 4804)
+
+
+Started DELETE "/products/1" for 172.17.0.1 at 2019-11-14 17:32:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N7DwuH1TwnUINwk7pqeXsrElCNFXxPkwpxZQICvzQJZAVqAyeXsZPq8GtCfJrPxe82pMO9M8GYnM/VRAuwlB9g==", "id"=>"1"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (1.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 36ms (ActiveRecord: 4.1ms | Allocations: 2760)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 800)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 135.4ms | ActiveRecord: 0.9ms | Allocations: 4707)
+
+
+Started GET "/products/2" for 172.17.0.1 at 2019-11-14 17:32:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 100)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 89.7ms | ActiveRecord: 0.6ms | Allocations: 4540)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 98.0ms | ActiveRecord: 0.3ms | Allocations: 4684)
+
+
+Started GET "/products/2/edit" for 172.17.0.1 at 2019-11-14 17:32:36 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.5ms | Allocations: 1191)
+  Rendered products/edit.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 113.5ms | ActiveRecord: 0.3ms | Allocations: 6009)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:38 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 175ms (Views: 173.4ms | ActiveRecord: 0.4ms | Allocations: 4686)
+
+
+Started GET "/products/new" for 172.17.0.1 at 2019-11-14 17:32:39 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.5ms | Allocations: 1102)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.0ms | Allocations: 5095)
+
+
+Started POST "/products" for 172.17.0.1 at 2019-11-14 17:32:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"7kPIDd6mjz+fGam2q+VMC7KIz/HQS/WitWXTGY+XuJntlX7chBDOY4I2jFvCwiyqObHMtvr+S5Dlni89D+kZFw==", "product"=>{"name"=>"abacate", "description"=>"fruta", "category"=>"alimento", "value"=>"4"}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "abacate"], ["description", "fruta"], ["category", "alimento"], ["value", 4.0], ["created_at", "2019-11-14 17:32:55.942714"], ["updated_at", "2019-11-14 17:32:55.942714"]]
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/products/3
+Completed 302 Found in 20ms (ActiveRecord: 2.4ms | Allocations: 2767)
+
+
+Started GET "/products/3" for 172.17.0.1 at 2019-11-14 17:32:55 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 88.4ms | ActiveRecord: 0.7ms | Allocations: 4557)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:32:57 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.6ms | Allocations: 4822)
+
+
+Started GET "/products/new" for 172.17.0.1 at 2019-11-14 17:33:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.1ms | Allocations: 1102)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.0ms | Allocations: 5076)
+
+
+Started POST "/products" for 172.17.0.1 at 2019-11-14 17:33:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token"=>"1QbG2G2SNSPZ+qGsDd/z49mm3GZylRBMIqpgBHFCU7nW0HAJNyR0f8TVhEFk+JNCUp/fIVggrn5yUZwg8TzyNw==", "product"=>{"name"=>"shampo", "description"=>"banho", "category"=>"higiente", "value"=>"6.5"}, "commit"=>"Create Product"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "category", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shampo"], ["description", "banho"], ["category", "higiente"], ["value", 6.5], ["created_at", "2019-11-14 17:33:30.682631"], ["updated_at", "2019-11-14 17:33:30.682631"]]
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/products/4
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms | Allocations: 2775)
+
+
+Started GET "/products/4" for 172.17.0.1 at 2019-11-14 17:33:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 102)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 67.8ms | ActiveRecord: 0.4ms | Allocations: 4555)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:33:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1066)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.5ms | Allocations: 4954)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:40:42 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1153)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /produto/public/packs
+[Webpacker] Hash: c3101593f473d095e94e
+Version: webpack 4.41.2
+Time: 7025ms
+Built at: 11/14/2019 5:40:55 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-c190d7967cc7ab27f4cb.js    426 KiB  application  [emitted] [immutable]  application
+js/application-c190d7967cc7ab27f4cb.js.map    498 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-c190d7967cc7ab27f4cb.js js/application-c190d7967cc7ab27f4cb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 769 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+Completed 200 OK in 13026ms (Views: 13017.3ms | ActiveRecord: 1.4ms | Allocations: 26489)
+
+
+Started DELETE "/products/2" for 172.17.0.1 at 2019-11-14 17:41:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w+ph4TTVFf3NeY68gFY26MyYReMBUfTAiGV21k9zjcq0DDFrMP3OtmpIM6DvXV0EjtcBCYWpFHnjjnK234mMqg==", "id"=>"2"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:67:in `set_product'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[36mProduct Destroy (1.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/products
+Completed 302 Found in 43ms (ActiveRecord: 5.2ms | Allocations: 2774)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:41:13 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 934)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.4ms | Allocations: 5301)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:41:20 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.6ms | Allocations: 5288)
+
+
+Started GET "/products" for 172.17.0.1 at 2019-11-14 17:42:12 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:17
+  Rendered products/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1236)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 116.4ms | ActiveRecord: 0.7ms | Allocations: 6515)
+
+
